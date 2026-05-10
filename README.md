@@ -2,6 +2,10 @@
 
 A lightweight, zero-dependency, in-process mediator library for .NET 10. Implements the Mediator pattern with support for request/response, commands, notifications (fan-out), and async streaming — with an ordered pipeline behavior mechanism for cross-cutting concerns.
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Target Framework](https://img.shields.io/badge/.NET-10.0-purple)](https://dotnet.microsoft.com/)
+![Build Status](https://github.com/danieltes/mediatore/actions/workflows/dotnet.yml/badge.svg)
+
 ## Packages
 
 | Package | Description |
@@ -297,7 +301,3 @@ builder.Services.AddMediator(options =>
 |---|---|
 | `HandlerNotFoundException` | `Send` or `CreateStream` is called for a type with no registered handler (dispatch time) |
 | `DuplicateHandlerException` | Two or more handlers are registered for the same request type (at `AddMediator` build time) |
-
-## License
-
-[MIT](LICENSE)
