@@ -4,6 +4,7 @@ A lightweight, zero-dependency, in-process mediator library for .NET 10. Impleme
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Target Framework](https://img.shields.io/badge/.NET-10.0-purple)](https://dotnet.microsoft.com/)
+![Build Status](https://github.com/danieltes/mediatore/actions/workflows/dotnet.yml/badge.svg)
 
 ## Packages
 
