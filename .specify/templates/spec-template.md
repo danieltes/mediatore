@@ -95,6 +95,16 @@
 - **FR-006**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
 - **FR-007**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
 
+### Invariants *(mandatory — per Constitution Art. II.2)*
+
+<!--
+  List conditions that MUST always hold, regardless of inputs or execution path.
+  Example: "The mediator registry is immutable after the mediator is built."
+-->
+
+- [Invariant describing a condition that must always be true]
+- [Invariant describing a constraint that must never be violated]
+
 ### Key Entities *(include if feature involves data)*
 
 - **[Entity 1]**: [What it represents, key attributes without implementation]
@@ -126,3 +136,14 @@
 - [Assumption about scope boundaries, e.g., "Mobile support is out of scope for v1"]
 - [Assumption about data/environment, e.g., "Existing authentication system will be reused"]
 - [Dependency on existing system/service, e.g., "Requires access to the existing user profile API"]
+
+## Out of Scope *(mandatory — per Constitution Art. II.2)*
+
+<!--
+  Explicitly state what this spec does NOT cover. This prevents scope creep and
+  ensures implementers do not make assumptions about uncovered behavior.
+  A spec without an Out of Scope section is incomplete.
+-->
+
+- [Capability explicitly excluded from this spec]
+- [Edge case or scenario deliberately deferred to a future spec]

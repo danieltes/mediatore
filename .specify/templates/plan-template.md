@@ -31,7 +31,22 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- [ ] **Spec-First (Art. II)**: A ratified spec in `specs/` exists for this feature before any
+      production code is written.
+- [ ] **Mediator Contract (Art. III)**: New message types are closed, typed, and mapped to a
+      single Handler (Request) or zero-or-more NotificationHandlers (Notification).
+- [ ] **Explicit over Implicit (Art. IV.1)**: No reflection-based auto-discovery used for core
+      behavior; any such feature is opt-in.
+- [ ] **Fail at Config Time (Art. IV.3)**: Misconfiguration (missing handler, duplicate
+      registration, circular dependency) surfaces at mediator build time, not dispatch time.
+- [ ] **Pipeline Only (Art. V)**: Cross-cutting concerns (logging, validation, auth, caching) are
+      implemented as registered pipeline behaviors, not embedded in the library core.
+- [ ] **No Swallowed Exceptions (Art. VI.1)**: The library does not catch or suppress exceptions
+      unless a pipeline behavior explicitly handles them per its spec.
+- [ ] **Tests Required (Art. VII)**: Unit, Integration, and Contract test files mirror the spec
+      name and test only the public API.
+- [ ] **Dependency Justified (Art. IX.1)**: Any new production dependency has an entry in
+      `DEPENDENCIES.md` explaining why it cannot be eliminated.
 
 ## Project Structure
 

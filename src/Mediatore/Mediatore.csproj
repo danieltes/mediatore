@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>Mediatore</RootNamespace>
+    <AssemblyName>Mediatore</AssemblyName>
+
+    <!-- NuGet metadata (T069) -->
+    <PackageId>Mediatore</PackageId>
+    <Version>1.0.0</Version>
+    <Description>A lightweight, zero-dependency, in-process mediator for .NET 10 (CQRS, request/response, notifications, streaming).</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>mediator cqrs dotnet pipeline</PackageTags>
+    <Authors>Mediatore Contributors</Authors>
+  </PropertyGroup>
+
+</Project>

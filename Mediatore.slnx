@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/samples/">
+    <Project Path="samples/CQRS.Sample/CQRS.Sample.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Mediatore.Extensions.DependencyInjection/Mediatore.Extensions.DependencyInjection.csproj" />
+    <Project Path="src/Mediatore.SourceGenerator/Mediatore.SourceGenerator.csproj" />
+    <Project Path="src/Mediatore/Mediatore.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Mediatore.Benchmarks/Mediatore.Benchmarks.csproj" />
+    <Project Path="tests/Mediatore.ContractTests/Mediatore.ContractTests.csproj" />
+    <Project Path="tests/Mediatore.IntegrationTests/Mediatore.IntegrationTests.csproj" />
+    <Project Path="tests/Mediatore.SourceGenerator.Tests/Mediatore.SourceGenerator.Tests.csproj" />
+    <Project Path="tests/Mediatore.UnitTests/Mediatore.UnitTests.csproj" />
+  </Folder>
+</Solution>

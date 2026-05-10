@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>Mediatore.Benchmarks</RootNamespace>
+    <IsPackable>false</IsPackable>
+    <!-- Benchmarks should not be treated as errors for unused variable warnings etc. -->
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Mediatore\Mediatore.csproj" />
+    <ProjectReference Include="..\..\src\Mediatore.Extensions.DependencyInjection\Mediatore.Extensions.DependencyInjection.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.15.8" />
+  </ItemGroup>
+
+</Project>
