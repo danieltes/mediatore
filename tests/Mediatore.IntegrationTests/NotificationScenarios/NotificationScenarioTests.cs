@@ -82,8 +82,8 @@ public sealed class NotificationScenarioTests
         var mediator = sp.GetRequiredService<IMediator>();
         await mediator.Publish(new SequentialEvent("test@example.com"), TestContext.Current.CancellationToken);
 
-        Assert.Contains("email:test@example.com", WelcomeEmailHandler.Invocations);
-        Assert.Contains("audit:test@example.com", AuditHandler.Invocations);
+        WelcomeEmailHandler.Invocations.Should().Contain("email:test@example.com");
+        AuditHandler.Invocations.Should().Contain("audit:test@example.com");
     }
 
     [Fact]
@@ -103,8 +103,8 @@ public sealed class NotificationScenarioTests
         var mediator = sp.GetRequiredService<IMediator>();
         await mediator.Publish(new ParallelEvent("parallel@example.com"), TestContext.Current.CancellationToken);
 
-        Assert.Contains("email:parallel@example.com", ParallelWelcomeHandler.Invocations);
-        Assert.Contains("audit:parallel@example.com", ParallelAuditHandler.Invocations);
+        ParallelWelcomeHandler.Invocations.Should().Contain("email:parallel@example.com");
+        ParallelAuditHandler.Invocations.Should().Contain("audit:parallel@example.com");
     }
 
     [Fact]
