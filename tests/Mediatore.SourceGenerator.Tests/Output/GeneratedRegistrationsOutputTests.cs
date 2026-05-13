@@ -27,11 +27,11 @@ public sealed class GeneratedRegistrationsOutputTests
         var generatedFile = generatedSources.FirstOrDefault(
             s => s.HintName == "MediatorRegistrations.g.cs");
 
-        Assert.NotNull(generatedFile.SourceText);
+        generatedFile.SourceText.Should().NotBeNull();
 
         var content = generatedFile.SourceText.ToString();
-        Assert.Contains("RegisterGeneratedHandlers", content);
-        Assert.Contains("Mediatore.Generated", content);
-        Assert.Contains("IServiceCollection", content);
+        content.Should().Contain("RegisterGeneratedHandlers");
+        content.Should().Contain("Mediatore.Generated");
+        content.Should().Contain("IServiceCollection");
     }
 }

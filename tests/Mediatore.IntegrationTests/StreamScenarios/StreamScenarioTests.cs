@@ -72,7 +72,7 @@ public sealed class StreamScenarioTests
             }
         });
 
-        Assert.True(items.Count < 100);
+        items.Count.Should().BeLessThan(100);
     }
 
     [Fact]
