@@ -41,12 +41,13 @@ public sealed class CancellationPropagationStreamTests
 
         var mediator = sp.GetRequiredService<IMediator>();
 
-        await Assert.ThrowsAnyAsync<OperationCanceledException>(async () =>
+        Func<Task> act = async () =>
         {
             await foreach (var _ in mediator.CreateStream(
                 new SlowDataRequest(10), cts.Token))
             { }
-        });
+        };
+        await act.Should().ThrowAsync<OperationCanceledException>();
     }
 
     [Fact]
@@ -61,7 +62,7 @@ public sealed class CancellationPropagationStreamTests
         var mediator = sp.GetRequiredService<IMediator>();
         var items = new List<int>();
 
-        await Assert.ThrowsAnyAsync<OperationCanceledException>(async () =>
+        Func<Task> act = async () =>
         {
             await foreach (var item in mediator.CreateStream(new SlowDataRequest(10), cts.Token))
             {
@@ -69,7 +70,8 @@ public sealed class CancellationPropagationStreamTests
                 if (items.Count == 2)
                     await cts.CancelAsync();
             }
-        });
+        };
+        await act.Should().ThrowAsync<OperationCanceledException>();
 
         Assert.True(items.Count < 10);
     }

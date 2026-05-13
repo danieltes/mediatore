@@ -34,8 +34,8 @@ public sealed class CancellationPropagationRequestTests
         using var cts = new CancellationTokenSource();
         cts.Cancel();
 
-        await Assert.ThrowsAsync<OperationCanceledException>(
-            () => mediator.Send(new EchoQuery("hello"), cts.Token));
+        Func<Task> act = () => mediator.Send(new EchoQuery("hello"), cts.Token);
+        await act.Should().ThrowAsync<OperationCanceledException>();
     }
 
     [Fact]
