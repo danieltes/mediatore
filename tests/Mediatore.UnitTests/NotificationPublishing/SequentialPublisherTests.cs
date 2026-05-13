@@ -92,8 +92,8 @@ public sealed class SequentialPublisherTests
 
         var publisher = new SequentialPublisher();
 
-        await Assert.ThrowsAsync<InvalidOperationException>(
-            () => publisher.Publish(executors, notification, TestContext.Current.CancellationToken));
+        Func<Task> act = () => publisher.Publish(executors, notification, TestContext.Current.CancellationToken);
+        await act.Should().ThrowAsync<InvalidOperationException>();
 
         Assert.Empty(h2.Invocations);
     }

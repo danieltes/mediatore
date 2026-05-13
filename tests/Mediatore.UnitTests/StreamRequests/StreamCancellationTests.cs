@@ -41,7 +41,7 @@ public sealed class StreamCancellationTests
         var mediator = sp.GetRequiredService<IMediator>();
         var items = new List<int>();
 
-        await Assert.ThrowsAnyAsync<OperationCanceledException>(async () =>
+        Func<Task> act = async () =>
         {
             await foreach (var item in mediator.CreateStream(new SlowStreamRequest(10), cts.Token))
             {
@@ -49,7 +49,8 @@ public sealed class StreamCancellationTests
                 if (items.Count == 1)
                     await cts.CancelAsync();
             }
-        });
+        };
+        await act.Should().ThrowAsync<OperationCanceledException>();
 
         // Fewer items than requested — cancellation stopped iteration
         Assert.True(items.Count < 10);

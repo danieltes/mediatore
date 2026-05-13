@@ -62,11 +62,12 @@ public sealed class StreamingResponseTests
 
         var mediator = sp.GetRequiredService<IMediator>();
 
-        await Assert.ThrowsAsync<HandlerNotFoundException>(async () =>
+        Func<Task> act = async () =>
         {
             await foreach (var _ in mediator.CreateStream(
                 new UnregisteredStreamRequest(), TestContext.Current.CancellationToken))
             { }
-        });
+        };
+        await act.Should().ThrowAsync<HandlerNotFoundException>();
     }
 }

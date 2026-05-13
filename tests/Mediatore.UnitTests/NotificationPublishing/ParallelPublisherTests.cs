@@ -86,9 +86,8 @@ public sealed class ParallelPublisherTests
         };
 
         var publisher = new ParallelPublisher();
-        var ex = await Assert.ThrowsAsync<AggregateException>(
-            () => publisher.Publish(executors, notification, TestContext.Current.CancellationToken));
-
-        Assert.Equal(2, ex.InnerExceptions.Count);
+        Func<Task> act = () => publisher.Publish(executors, notification, TestContext.Current.CancellationToken);
+        var result = await act.Should().ThrowAsync<AggregateException>();
+        result.Which.InnerExceptions.Count.Should().Be(2);
     }
 }

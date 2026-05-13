@@ -52,7 +52,7 @@ public sealed class CancellationPropagationNotificationTests
 
         var mediator = sp.GetRequiredService<IMediator>();
 
-        await Assert.ThrowsAnyAsync<OperationCanceledException>(
-            () => mediator.Publish(new InventoryEvent(1), cts.Token));
+        Func<Task> act = () => mediator.Publish(new InventoryEvent(1), cts.Token);
+        await act.Should().ThrowAsync<OperationCanceledException>();
     }
 }
