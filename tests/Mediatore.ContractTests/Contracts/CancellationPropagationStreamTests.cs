@@ -73,6 +73,6 @@ public sealed class CancellationPropagationStreamTests
         };
         await act.Should().ThrowAsync<OperationCanceledException>();
 
-        Assert.True(items.Count < 10);
+        items.Count.Should().BeLessThan(10);
     }
 }

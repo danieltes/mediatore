@@ -53,6 +53,6 @@ public sealed class StreamCancellationTests
         await act.Should().ThrowAsync<OperationCanceledException>();
 
         // Fewer items than requested — cancellation stopped iteration
-        Assert.True(items.Count < 10);
+        items.Count.Should().BeLessThan(10);
     }
 }
