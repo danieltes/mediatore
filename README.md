@@ -6,6 +6,8 @@ A lightweight, zero-dependency, in-process mediator library for .NET 10. Impleme
 [![Target Framework](https://img.shields.io/badge/.NET-10.0-purple)](https://dotnet.microsoft.com/)
 ![Build Status](https://github.com/danieltes/mediatore/actions/workflows/dotnet.yml/badge.svg)
 
+![Mediatore Logo](mediatore_logo_200x200.png)
+
 ## Packages
 
 | Package | Description |
