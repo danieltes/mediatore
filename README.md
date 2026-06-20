@@ -8,6 +8,8 @@ A lightweight, zero-dependency, in-process mediator library for .NET 10. Impleme
 
 ![Mediatore Logo](mediatore_logo_200x200.png)
 
+> **Disclaimer:** Mediatore is a personal learning/playground project, built to explore .NET library design, patterns for request/response support, commands, notifications (fan-out), a pipeline mechanism for cross-cutting concerns, and [Spec Kit](https://github.com/github/spec-kit) capabilities. It is not affiliated with or endorsed by any commercial product, and is not recommended for production use without your own due diligence.
+
 ## Packages
 
 | Package | Description |
